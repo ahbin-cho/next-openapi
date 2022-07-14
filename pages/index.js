@@ -25,7 +25,7 @@ export default function Home({ items }) {
                     type:'video',
                     maxResults:20
                 }; 
-                const { data } = await fetch( 'https://www.googleapis.com/youtube/v3/search',{ params });
+                const { data } = await axios.get( 'https://www.googleapis.com/youtube/v3/search',{ params });
         
                 const { items } = data;
                 if ( items ) {
