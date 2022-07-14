@@ -1,3 +1,39 @@
 {
-  "extends": "next/core-web-vitals"
+  "env": {
+    "browser": true,
+    "es6": true,
+    "jest": true
+  },
+  "extends": ["next/core-web-vitals", "prettier"],
+  "plugins": ["react", "react-hooks", "prettier"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "rules": {
+    "indent": [ "error", 4 ], // 띄어쓰기 체크
+    "space-in-parens": ["error", "always", { "exceptions": ["{}", "[]"] }], // () 안쪽에 띄어쓰기 한번 체크
+    "object-curly-spacing": ["error", "always"], // 중괄호 안에 일정한 간격을 유지합니다
+    "array-bracket-spacing": ["error", "always"], // 배열 괄호 안에 하나 이상의 공백이나 줄 바꿈이 필요합니다
+    "object-curly-newline": ["error", { "multiline": true } ], // 속성 내부 또는 속성 사이에 줄 바꿈이있는 경우 줄 바꿈이 필요합니다. 그렇지 않으면 줄 바꿈이 허용되지 않습니다.
+    "template-curly-spacing": ["error", "always"], // 중괄호 쌍 안에 하나 이상의 공백이 필요합니다.
+    "no-underscore-dangle": ["error", { "allowAfterThis": true, "allow": [ "_id" ] }], // this객체의 멤버에서 매달린 밑줄을 허용, _id 밑줄 허용
+    "no-param-reassign": ["error", { "props": false }], // 함수 매개 변수 재 할당 금지
+    "max-len": ["error", { "code": 400 }], // 최대 줄 길이를 적용합니다
+    "no-use-before-define": ["error", { "functions": true }], // 조기 사용 금지 (미사용 전 정의)
+    "no-unused-vars": ["error", { "vars": "all", "args": "none", "ignoreRestSiblings": false }], // 사용하지 않는 변수 허용 (사용하지 않는 변수)
+    "react/jsx-closing-bracket-location": 0, // JSX에서 닫는 괄호 위치 확인
+    "react/jsx-indent": ["error", 4], // JSX 들여 쓰기 확인
+    "react/jsx-indent-props": ["error", 4], // JSX에서 props 들여 쓰기 확인 
+    "consistent-return": ["off", { "treatUndefinedAsUnspecified": true }],
+    "array-callback-return": ["off"]
+  }
 }
