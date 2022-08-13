@@ -153,7 +153,7 @@ export default function Home({ items }) {
     )
 }
 
-export const getStaticProps = async ( context ) => {
+export const getServerSideProps = async ( context ) => {
     const { data } = await axios.get( 'https://www.googleapis.com/youtube/v3/search',
         {
             params: {
